@@ -30,11 +30,11 @@ Have Docker installed on machine.
 
    ```
 5. Copy URL into your browser and replace whatever is in <host> with "localhost"
-  ```
-  http://localhost:8888/?token=....
-  ```
-  You should now be able to access the Nomads-Classifier jupyter notebook. Leave the container running and follow the       
-  instructions in there to run the pipeline!
+   ```
+   http://localhost:8888/?token=....
+   ```
+   You should now be able to access the Nomads-Classifier jupyter notebook. Leave the container running and follow the       
+   instructions in there to run the pipeline!
   
 6. To get results after your pipeline is done running, press ```Ctr-C``` in the docker container. Type:
    ```
@@ -59,6 +59,6 @@ Have Docker installed on machine.
   You will ssh into running docker container.  
 3. Run the command
   ```
-  python3 driver.py --host api.boss.neurodata.io --token <insert BOSS API token> --col <insert BOSS collection> --exp <insert BOSS experiment> --z-range <z_start>,<z_end> --y-range <y_start>,<y_end> --x-range <x_start>,<x_end>
-  ```   
+  python3 driver.py --host api.boss.neurodata.io --token <insert BOSS API token> --col <insert BOSS collection> --exp <insert  BOSS experiment> --z-range <z_start>,<z_end> --y-range <y_start>,<y_end> --x-range <x_start>,<x_end>
+  ```
 4. See steps 6 and 7 to retrieve results.
