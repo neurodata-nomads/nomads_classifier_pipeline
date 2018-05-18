@@ -40,4 +40,25 @@ Have Docker installed on machine.
    ```
    cd results
    ```
-7. You are now inside the results directory and can checkout the results. If you want to move results to your computer follow instructions in this [link](https://stackoverflow.com/questions/22049212/copying-files-from-docker-container-to-host?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
+7. You are now inside the results directory and can checkout the results. If you want to move results to your computer follow instructions in this [link](https://stackoverflow.com/questions/22049212/copying-files-from-docker-container-to-host?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa) 
+
+8. You can exit container by typing ```exit```
+  
+  
+### Method 2. Run using Python
+0. Go into Terminal (can skip step 1 if you already have image)
+
+1. Pull built image from [DockerHub](https://hub.docker.com/r/rguo123/nomads-classifier/) by running:  
+  ```
+  docker pull rguo123/nomads-classifier
+  ```
+2. Start image with the following command
+  ```
+  docker run -it rguo123/nomads-classifier:latest bash
+  ```
+  You will ssh into running docker container.
+3. Run the command
+  ```
+  python3 driver.py --host api.boss.neurodata.io --token <insert BOSS API token> --col <insert BOSS collection> --exp <insert BOSS experiment> --z-range <z_start>,<z_end> --y-range <y_start>,<y_end> --x-range <x_start>,<x_end>
+  ```
+4. See steps 6 and 7 to retrieve results.
