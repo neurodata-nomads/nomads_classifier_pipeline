@@ -9,7 +9,7 @@ This pipeline will:
 
 ## How to Run using Docker
 Prequisites:  
-Have Docker installed on machine. Instructions [here]()
+Have Docker installed on machine. Instructions [here](https://docs.docker.com/docker-for-mac/install/)
 
 ### Method 1. Run using Jupyter Notebook
 0. Open Terminal
