@@ -1,5 +1,11 @@
 # nomads-classifier-pipeline
-Nomads classifier with PyMeda and Boss functionality
+Nomads classifier with PyMeda and Boss functionality.  
+This pipeline will:
+1. Pull data from BOSS (assuming correct permissions)
+2. Run [Nomads-unsupervised](https://github.com/neurodata-nomads/nomads_deploy)
+3. Run [Nomads-classifier](https://github.com/neurodata-nomads/nomads_classifier)
+4. Run [PyMeda](https://github.com/neurodata-nomads/pymeda)
+5. Upload results to BOSS (assuming correct permissions to push to channel "collman_nomads" and experiment "nomads_predictions".
 
 ## How to Run using Docker
 Prequisites:  
