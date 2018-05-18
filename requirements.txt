@@ -1,0 +1,9 @@
+pandas==0.21.0
+boto3==1.4.7
+scikit_image==0.13.1
+scipy==1.0.0
+intern==0.9.4
+numpy==1.13.1
+pymeda==0.1.5
+scikit_learn==0.19.1
+jupyter
