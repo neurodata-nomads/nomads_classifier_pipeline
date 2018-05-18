@@ -12,8 +12,7 @@ Have Docker installed on machine.
   ```
   docker pull rguo123/nomads-classifier
   ```
-  Alternatively, you can build the notebook from scratch using 
-2. Start image with the following command:  
+2. Start image with the following command
   ```
   docker run -it -p 8888:8888 rguo123/nomads-classifier:latest bash
   ```
@@ -40,4 +39,4 @@ Have Docker installed on machine.
    ```
    cd results
    ```
-7. You are now inside the results directory and can checkout the results. If you want to move results follow instructions in this [link](https://stackoverflow.com/questions/22049212/copying-files-from-docker-container-to-host?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
+7. You are now inside the results directory and can checkout the results. If you want to move results to your computer follow instructions in this [link](https://stackoverflow.com/questions/22049212/copying-files-from-docker-container-to-host?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
