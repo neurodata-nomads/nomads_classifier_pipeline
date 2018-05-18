@@ -46,7 +46,9 @@ Have Docker installed on machine.
    ```
    cd results
    ```
-7. You are now inside the results directory and can checkout the results. If you want to move results to your computer follow instructions in this [link](https://stackoverflow.com/questions/22049212/copying-files-from-docker-container-to-host?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa) 
+7. You are now inside the results directory and can checkout the results. If you want to move results to your computer follow instructions in this [link](https://stackoverflow.com/questions/22049212/copying-files-from-docker-container-to-host?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa).  
+
+Inside the results directory, you should have NDVis_links.csv which contains links to NDVis, pickled numpy arrays of the predictions, and PyMeda HTML files.
 
 8. You can exit container by typing ```exit```
   
