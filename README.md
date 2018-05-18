@@ -69,4 +69,4 @@ Have Docker installed on machine.
 ```
 python3 driver.py --host api.boss.neurodata.io --token <insert BOSS API token> --col <insert BOSS collection> --exp <insert  BOSS experiment> --z-range <z_start>,<z_end> --y-range <y_start>,<y_end> --x-range <x_start>,<x_end>
 ```
-4. See steps 6 and 7 to retrieve results.
+4. See steps 6 and 7 in Method 1 to retrieve results.
