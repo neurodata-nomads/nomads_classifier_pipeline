@@ -11,6 +11,8 @@ import csv
 import logging
 from traceback import print_exc
 import intern.utils.parallel as intern
+import os
+
 # pull data from BOSS
 
 def get_data(host, token, col, exp, z_range, y_range, x_range):
@@ -113,6 +115,12 @@ def driver(host, token, col, exp, z_range, y_range, x_range, path = "./results/"
     print("Starting Nomads Classifier...")
     results_key = "_".join(["nomads-classifier", col, exp, "z", str(z_range[0]), str(z_range[1]), "y", \
     str(y_range[0]), str(y_range[1]), "x", str(x_range[0]), str(x_range[1])])
+    path = path + results_key + "/"
+
+    if not os.path.exists(path):
+        os.makedirs(path)
+    logging.basicConfig(filename=path + 'job.log',level=logging.INFO)
+
 
     info = locals()
     try:
@@ -188,7 +196,7 @@ def driver(host, token, col, exp, z_range, y_range, x_range, path = "./results/"
     results_dict = {"All": results, "Gaba": gaba_vol, "NonGaba": non_gaba_vol}
     try:
         boss_links = boss_push(token, "collman_nomads", "nomads_predictions", z_range, y_range, x_range, results_dict, results_key)
-        with open('results/NDVIS_links.csv', 'w') as csv_file:
+        with open(path + "NDVIS_links.csv", 'w') as csv_file:
             writer = csv.writer(csv_file)
             for key, value in boss_links.items():
                 writer.writerow([key, value])
@@ -219,5 +227,4 @@ if __name__ == "__main__":
     y_range = list(map(int, args.y_range.split(",")))
     x_range = list(map(int, args.x_range.split(",")))
 
-    logging.basicConfig(filename='./results/job.log',level=logging.INFO)
     driver(args.host, args.token, args.col, args.exp, z_range, y_range, x_range)
