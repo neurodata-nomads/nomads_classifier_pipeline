@@ -25,27 +25,27 @@ Have Docker installed on machine.
   You will ssh into running docker container.
   
 3. Start notebook with the command:  
-   ```
-   jupyter notebook --ip 0.0.0.0 --allow-root --no-browser
-   ```
+  ```
+  jupyter notebook --ip 0.0.0.0 --allow-root --no-browser
+  ```
 4. A url that looks like the following should appear:
-   ```
-   Copy/paste this URL into your browser when you connect for the first time,
-    to login with a token:
-    http://<host>:8888/?token=<long token>
+  ```
+  Copy/paste this URL into your browser when you connect for the first time,
+   to login with a token:
+   http://<host>:8888/?token=<long token>
 
-   ```
+  ```
 5. Copy URL into your browser and replace whatever is in <host> with "localhost"
-   ```
-   http://localhost:8888/?token=....
-   ```
+  ```
+  http://localhost:8888/?token=....
+  ```
    You should now be able to access the Nomads-Classifier jupyter notebook. Leave the container running and follow the       
    instructions in there to run the pipeline!
   
 6. To get results after your pipeline is done running, press ```Ctr-C``` in the docker container. Type:
-   ```
-   cd results
-   ```
+  ```
+  cd results
+  ```
 7. You are now inside the results directory and can checkout the results. If you want to move results to your computer follow instructions in this [link](https://stackoverflow.com/questions/22049212/copying-files-from-docker-container-to-host?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa).  
 
 Inside the results directory, you should have NDVis_links.csv which contains links to NDVis, pickled numpy arrays of the predictions, and PyMeda HTML files.
