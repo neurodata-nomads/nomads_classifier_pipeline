@@ -16,7 +16,7 @@ Have Docker installed on machine.
   ```
   docker run -it -p 8888:8888 rguo123/nomads-classifier:latest bash
   ```
-  You will ssh into running docker container.
+    You will ssh into running docker container.
   
 3. Start notebook with the command:  
    ```
@@ -33,7 +33,8 @@ Have Docker installed on machine.
   ```
   http://localhost:8888/?token=....
   ```
-  You should now be able to access the Nomads-Classifier jupyter notebook. Leave the container running and follow the instructions in there to run the pipeline!
+    You should now be able to access the Nomads-Classifier jupyter notebook. Leave the container running and follow the       
+    instructions in there to run the pipeline!
   
 6. To get results after your pipeline is done running, press ```Ctr-C``` in the docker container. Type:
    ```
