@@ -9,7 +9,7 @@ This pipeline will:
 
 ## How to Run using Docker
 Prequisites:  
-Have Docker installed on machine.
+Have Docker installed on machine. Instructions [here]()
 
 ### Method 1. Run using Jupyter Notebook
 0. Open Terminal
@@ -70,3 +70,9 @@ Have Docker installed on machine.
 python3 driver.py --host api.boss.neurodata.io --token <insert BOSS API token> --col <insert BOSS collection> --exp <insert  BOSS experiment> --z-range <z_start>,<z_end> --y-range <y_start>,<y_end> --x-range <x_start>,<x_end>
 ```
 4. See steps 6 and 7 in Method 1 to retrieve results.
+
+## How to run without Docker:
+Prequisites: Have python3 and pip3 working on computer.
+1. ``` git clone https://github.com/rguo123/nomads-classifier-pipeline.git```
+2. ```pip3 install -r requirements.txt```
+3. Run the command step 3 in Running with Docker Method 2.
