@@ -56,7 +56,7 @@ Have Docker installed on machine.
   ```
   docker run -it rguo123/nomads-classifier:latest bash
   ```
-  You will ssh into running docker container.
+  You will ssh into running docker container.  
 3. Run the command
   ```
   python3 driver.py --host api.boss.neurodata.io --token <insert BOSS API token> --col <insert BOSS collection> --exp <insert BOSS experiment> --z-range <z_start>,<z_end> --y-range <y_start>,<y_end> --x-range <x_start>,<x_end>
