@@ -7,6 +7,10 @@ This pipeline will:
 4. Run [PyMeda](https://github.com/neurodata-nomads/pymeda)
 5. Upload results to BOSS (assuming correct permissions to push to channel "collman_nomads" and experiment "nomads_predictions").
 
+## WARNINGS:
+1. If no synapses were detected by nomads-unsupervised, the program will exit. Check job.log to see if this happened.
+2. Nomads-classifier requires you to have at least 20 slices in the z-dimension. Anything smaller will cause the program to exit.
+
 ## How to Run using Docker
 Prequisites:  
 Have Docker installed on machine. Instructions [here](https://docs.docker.com/docker-for-mac/install/)
