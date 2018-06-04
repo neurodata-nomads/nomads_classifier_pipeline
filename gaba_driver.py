@@ -25,7 +25,6 @@ def get_cubes(raw_data, centroids):
     out = []
     ids = []
 
-
     for row in centroids:
         cubes = []
         z, y, x = row
@@ -34,8 +33,8 @@ def get_cubes(raw_data, centroids):
         x_idx = (x - cube_size[2], x + cube_size[2] + 1)
 
         if (z_idx[0] >= 0) and (y_idx[0] >= 0) and (x_idx[0] >= 0) and (
-                    z_idx[1] <= max_size[0]) and (y_idx[1] <= max_size[1]) and (
-                        x_idx[1] <= max_size[2]):
+                z_idx[1] <= max_size[0]) and (y_idx[1] <= max_size[1]) and (
+                    x_idx[1] <= max_size[2]):
             ids.append(1)
         else:
             ids.append(0)
@@ -48,8 +47,8 @@ def get_cubes(raw_data, centroids):
 
             # Dont deal with cubes on the edge of data
             if (z_idx[0] >= 0) and (y_idx[0] >= 0) and (x_idx[0] >= 0) and (
-                    z_idx[1] <= max_size[0]) and (y_idx[1] <= max_size[1]) and (
-                        x_idx[1] <= max_size[2]):
+                    z_idx[1] <= max_size[0]) and (
+                        y_idx[1] <= max_size[1]) and (x_idx[1] <= max_size[2]):
                 cube = data[z_idx[0]:z_idx[1], y_idx[0]:y_idx[1], x_idx[0]:
                             x_idx[1]]
                 cubes.append(cube)
@@ -79,6 +78,7 @@ def get_channels(dict_keys):
 
     return out, out_include_list
 
+
 def create_channel(dimensions, centroids):
     data = np.zeros(dimensions, dtype=np.uint8)
 
@@ -98,7 +98,7 @@ def gaba_classifier_pipeline(raw_data, centroids):
     centroids : list
         In [z, y, x] format
     """
-    X, ids = get_cubes(raw_data, centroids)
+    X, valid_cubes = get_cubes(raw_data, centroids)
     centroids = np.array(centroids)
     channels = [x for x in raw_data.keys()]
     channels = list(raw_data.keys())
@@ -118,7 +118,6 @@ def gaba_classifier_pipeline(raw_data, centroids):
         model = pickle.load(f)
 
     predictions = model.predict(X)
-
     # gaba_centroids = centroids[predictions == 1]
     # ext_centroids = centroids[predictions == 0]
 
@@ -126,12 +125,9 @@ def gaba_classifier_pipeline(raw_data, centroids):
     # ext_channels = create_channel(max_size, ext_centroids)
 
     # Relabel things
-    pointer = 0
-    print('ids: ', ids)
-    for idx, val in enumerate(ids):
-        if val == 1:
-            if predictions[pointer] == 1:
-                ids[val] = 2
-            pointer += 1
+    ids = np.where(valid_cubes == 1)[0]
+    for counter, index in enumerate(ids):
+        if predictions[counter] == 1:
+            valid_cubes[index] = 2
 
-    return ids
+    return valid_cubes
