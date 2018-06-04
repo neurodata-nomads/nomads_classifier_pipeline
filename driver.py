@@ -190,7 +190,6 @@ def driver(host, token, col, exp, z_range, y_range, x_range,
         synapse_centroids = pymeda_driver.calculate_synapse_centroids(
             connected_components)
         class_list = gaba_classifier_pipeline(data_dict, synapse_centroids)
-        print(np.bincount(class_list))
         no_pred_vol, non_gaba_vol, gaba_vol = split_vol_by_id(
             label_vol, class_list, 3)
     except Exception as e:
