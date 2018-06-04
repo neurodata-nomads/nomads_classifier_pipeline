@@ -141,7 +141,7 @@ def split_vol_by_id(vol, ids, num_vols):
 def driver(host, token, col, exp, z_range, y_range, x_range,
            path="./results/"):
     print("Starting Nomads Classifier...")
-    results_key = "_".join(["nomads-classipipfier", col, exp, "z", str(z_range[0]), str(z_range[1]), "y", \
+    results_key = "_".join(["nomads-classifier", col, exp, "z", str(z_range[0]), str(z_range[1]), "y", \
     str(y_range[0]), str(y_range[1]), "x", str(x_range[0]), str(x_range[1])])
     path = path + results_key + "/"
 
