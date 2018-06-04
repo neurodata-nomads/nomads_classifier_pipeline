@@ -29,7 +29,7 @@ Have Docker installed on machine. Instructions [here](https://docs.docker.com/do
    You will ssh into running docker container.
   
 3. Start notebook with the command:  
-  ```
+  ``` 
   jupyter notebook --ip 0.0.0.0 --allow-root --no-browser
   ```
 4. A url that looks like the following should appear:
@@ -37,24 +37,24 @@ Have Docker installed on machine. Instructions [here](https://docs.docker.com/do
   Copy/paste this URL into your browser when you connect for the first time,
    to login with a token:
    http://<host>:8888/?token=<long token>
-
   ```
 5. Copy URL into your browser and replace whatever is in <host> with "localhost"
   ```
   http://localhost:8888/?token=....
   ```
-   You should now be able to access the Nomads-Classifier jupyter notebook. Leave the container running and follow the       
-   instructions in there to run the pipeline!
+   You should now be able to access the Nomads-Classifier jupyter notebook. 
+
+6. In Jupyter Console, click on the file named ```Nomads-Classifier.ipynb```. Follow the instructions within the notebook to run the pipeline.
   
-6. To get results after your pipeline is done running, press ```Ctr-C``` in the docker container. Type:
+7. To get results after your pipeline is done running, press ```Ctr-C``` twice in terminal. Type:
   ```
   cd results
   ```
-7. You are now inside the results directory and can checkout the results. If you want to move results to your computer follow instructions in this [link](https://stackoverflow.com/questions/22049212/copying-files-from-docker-container-to-host?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa).  
+8. You are now inside the results directory and can checkout the results. If you want to move results to your computer follow instructions in this [link](https://stackoverflow.com/questions/22049212/copying-files-from-docker-container-to-host?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa).  
 
-  Inside the results directory, you should have NDVis_links.csv which contains links to NDVis, pickled numpy arrays of the      predictions, and PyMeda HTML files.
+  Inside the results directory, you should have NDVis_links.csv which contains links to NDVis, pickled numpy arrays of the predictions, and PyMeda HTML files.
 
-8. You can exit container by typing ```exit```
+9. You can exit container by typing ```exit```
   
   
 ### Method 2. Run using Python
