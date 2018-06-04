@@ -3,10 +3,9 @@ boto3==1.4.7
 scikit_image==0.13.1
 scipy==1.0.0
 intern==0.9.4
-numpy==1.13.1
+numpy>=1.13.1
 Cython
-pymeda==0.1.6
+pymeda>=0.1.6
 scikit_learn==0.19.1
 jupyter
 matplotlib==2.1.0
-lolp==0.0.2
