@@ -260,7 +260,7 @@ def driver(host, token, col, exp, z_range, y_range, x_range,
         logging.info(e)
 
     logging.info("Finished, uploading results. END")
-    return info, results
+    return info
 
 
 '''
