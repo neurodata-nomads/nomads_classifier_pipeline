@@ -27,9 +27,9 @@ def get_data(host, token, col, exp, z_range, y_range, x_range):
     orig_shape = (z_range[1] - z_range[0], y_range[1] - y_range[0],
                   x_range[1] - x_range[0])
     for chan in resource.channels:
-        test = resource.get_cutout(chan, [1, 5], [1, 50], [1, 50])
-        type = test.dtype
-        merged_array = np.zeros(orig_shape, dtype=type)
+        test = resource.get_cutout(chan, [1, 3], [1, 50], [1, 50])
+        dtype = test.dtype
+        merged_array = np.zeros(orig_shape, dtype=dtype)
         for block in blocks:
             x_r, y_r, z_r = block
             merged_array[z_r[0] - z_range[0]:z_r[1] - z_range[0], y_r[0] - y_range[0]:y_r[1] - y_range[0], x_r[0] - x_range[0]:x_r[1] - x_range[0]] = \

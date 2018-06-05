@@ -20,11 +20,11 @@ Have Docker installed on machine. Instructions [here](https://docs.docker.com/do
 
 1. Pull built image from [DockerHub](https://hub.docker.com/r/rguo123/nomads-classifier/) by running:  
   ```
-  docker pull rguo123/nomads-classifier
+  docker pull nomads/nomads-classifier
   ```
 2. Start image with the following command
   ```
-  docker run -it -p 8888:8888 rguo123/nomads-classifier:latest bash
+  docker run -it -p 8888:8888 nomads/nomads-classifier:latest bash
   ```
    You will ssh into running docker container.
   
@@ -32,25 +32,27 @@ Have Docker installed on machine. Instructions [here](https://docs.docker.com/do
   ``` 
   jupyter notebook --ip 0.0.0.0 --allow-root --no-browser
   ```
-4. A url that looks like the following should appear:
+4. A url that looks like the following should appear in the terminal:
   ```
   Copy/paste this URL into your browser when you connect for the first time,
    to login with a token:
    http://<host>:8888/?token=<long token>
   ```
-5. Copy URL into your browser and replace whatever is in <host> with "localhost"
+5. Copy URL into your browser and replace whatever is in ```<host>``` with ```localhost```
   ```
   http://localhost:8888/?token=....
   ```
    You should now be able to access the Nomads-Classifier jupyter notebook. 
 
 6. In Jupyter Console, click on the file named ```Nomads-Classifier.ipynb```. Follow the instructions within the notebook to run the pipeline.
+     * In order to obtain your BOSS token, please refer to [Obtaining BOSS Token](#obtaining-your-boss-api-token).
+     * In order to obtain the parameters for experiments and collection, please refer to [Getting Collection and Experiment](#getting-collection-and-experiment).
   
-7. To get results after your pipeline is done running, press ```Ctr-C``` twice in terminal. Type:
+8. To get results after your pipeline is done running, press ```Ctr-C``` twice in terminal. Type:
   ```
   cd results
   ```
-8. You are now inside the results directory and can checkout the results. Since the results live in the Docker contain, If you want to move results to your computer follow instructions in this [link](https://stackoverflow.com/questions/22049212/copying-files-from-docker-container-to-host?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa).  
+9. You are now inside the results directory and can checkout the results. Since the results live in the Docker contain, If you want to move results to your computer follow instructions in this [link](https://stackoverflow.com/questions/22049212/copying-files-from-docker-container-to-host?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa).
 
   Inside the results directory, you should have NDVis_links.csv which contains links to NDVis, pickled numpy arrays of the predictions, and PyMeda HTML files.
 
@@ -62,11 +64,11 @@ Have Docker installed on machine. Instructions [here](https://docs.docker.com/do
 
 1. Pull built image from [DockerHub](https://hub.docker.com/r/rguo123/nomads-classifier/) by running:  
   ```
-  docker pull rguo123/nomads-classifier
+  docker pull nomads/nomads-classifier
   ```
 2. Start image with the following command
   ```
-  docker run -it rguo123/nomads-classifier:latest bash
+  docker run -it nomads/nomads-classifier:latest bash
   ```
   You will ssh into running docker container.  
 3. Run the command
@@ -80,3 +82,19 @@ Prequisites: Have python3 and pip3 working on computer.
 1. ``` git clone https://github.com/rguo123/nomads-classifier-pipeline.git```
 2. ```pip3 install -r requirements.txt```
 3. Run the command step 3 in Running with Docker Method 2.
+
+## Guide to BOSS
+The way that BOSS categorizes data is kind of confusing, and its UI can be unclear at times. The following is a walkthrough of where on boss you need to go to get the information to run `Nomads Classifier`. 
+
+All of these steps originate from the homepage at https://api.boss.neurodata.io/v1/mgmt/
+
+Green Circles denote information that you will need for the initializer of the class Red Circles show you where to click next.
+
+### Obtaining your BOSS API Token
+![Getting BOSS API Token](imgs/get_api_key.png)
+![Generate BOSS API Token](imgs/get_api_key2.png)
+
+### Getting Collection and Experiment
+![Navigating to collections](imgs/a.png)
+![Navigating to ](imgs/b.png)
+![Navigating to ](imgs/c2.png)
